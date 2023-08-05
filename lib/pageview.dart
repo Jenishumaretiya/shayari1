@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:shayari/shayridata.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: page(),
-  ));
-}
+// void main() {
+//   runApp(MaterialApp(
+//     home: page(),
+//   ));
+// }
 
 class page extends StatefulWidget {
   const page({Key? key}) : super(key: key);

@@ -1,4 +1,3 @@
-
 import 'dart:io';
 import 'dart:math';
 import 'dart:typed_data';
@@ -14,12 +13,13 @@ class four extends StatefulWidget {
   List shayri = [];
   int index;
 
-  four(this.shayri, this.index);
+  four(this.shayri, this.index, {super.key});
 
   @override
   State<four> createState() => _fourState();
 }
 
+// ignore: camel_case_types
 class _fourState extends State<four> {
   double l = 10;
   double fontsize = 15;
@@ -263,13 +263,14 @@ class _fourState extends State<four> {
                   bytes = await controller.capture();
                   var path =
                       await ExternalPath.getExternalStoragePublicDirectory(
-                          ExternalPath.DIRECTORY_DOWNLOADS)+"/syimage";
-                   Directory dir = Directory(path);
-                   if(!await dir.exists());
-                   {
-                     dir.create();
-                   }
-                   int r=Random().nextInt(10000);
+                              ExternalPath.DIRECTORY_DOWNLOADS) +
+                          "/syimage";
+                  Directory dir = Directory(path);
+                  if (!await dir.exists()) ;
+                  {
+                    dir.create();
+                  }
+                  int r = Random().nextInt(10000);
                   String img_name = "img_jpg";
                   File f = File("${path}/${img_name}");
                   await f.writeAsBytes(bytes!);

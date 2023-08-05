@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:shayari/nextpage.dart';
 import 'package:shayari/shayridata.dart';
 
-void main() {
-  runApp(MaterialApp(
-    home: view(),
-  ));
-}
+// void main() {
+//   runApp(MaterialApp(
+//     home: view(),
+//   ));
+// }
 
 class view extends StatefulWidget {
   const view({Key? key}) : super(key: key);
@@ -16,14 +16,13 @@ class view extends StatefulWidget {
 }
 
 class _viewState extends State<view> {
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: Text("view data"),backgroundColor: Colors.green,
+          title: Text("view data"),
+          backgroundColor: Colors.green,
         ),
         body: ListView.separated(
             itemBuilder: (context, index) {
@@ -38,15 +37,22 @@ class _viewState extends State<view> {
                 child: Container(
                   color: Colors.white,
                   child: ListTile(
-                    title: Text("${data.first[index]}",style: TextStyle(color: Colors.green),),
-                    leading: Image.asset(data.images[index],height: 50,width: 50,),
-                    trailing: Icon(Icons.add),
+                    title: Text(
+                      "${data.first[index]}",
+                      style: const TextStyle(color: Colors.green),
+                    ),
+                    leading: Image.asset(
+                      data.images[index],
+                      height: 50,
+                      width: 50,
+                    ),
+                    trailing: const Icon(Icons.add),
                   ),
                 ),
               );
             },
             separatorBuilder: (context, index) {
-              return Divider(
+              return const Divider(
                 thickness: 3,
                 color: Colors.greenAccent,
               );
